@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Advanced Search</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #f8f9fa;
+      --text: #212529;
+      --header: #fff;
+      --box: #fff;
+      --input: #fff;
+      --input-text: #000;
+    }
+    body.dark-mode {
+      --bg: #121212;
+      --text: #e1e1e1;
+      --header: #1f1f1f;
+      --box: #1e1e1e;
+      --input: #2b2b2b;
+      --input-text: #eee;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: var(--header);
+      border-bottom: 1px solid #ccc;
+    }
+    header img {
+      height: 40px;
+    }
+    .nav-buttons {
+      display: flex;
+      gap: 10px;
+    }
+    .nav-buttons button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      background: #1a73e8;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      background: var(--box);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    h1 {
+      color: #d93025;
+      font-size: 28px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 16px;
+    }
+    .form-group input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      background: var(--input);
+      color: var(--input-text);
+    }
+    .submit-btn {
+      text-align: right;
+    }
+    .submit-btn input {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      background: #1a73e8;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/800px-Google_2015_logo.svg.png" alt="Logo">
+    <div class="nav-buttons">
+      <a href="index.html"><button>Google</button></a>
+      <a href="indeximg.html"><button>Images</button></a>
+      <button onclick="document.body.classList.toggle('dark-mode')">🌙 Toggle Dark Mode</button>
+    </div>
+  </header>
+  <main>
+    <h1>Advanced Search</h1>
+    <form action="https://www.google.com/search">
+      <div class="form-group">
+        <label for="as_q">All these words:</label>
+        <input type="text" id="as_q" name="as_q" placeholder="e.g. AI machine learning deep learning">
+      </div>
+      <div class="form-group">
+        <label for="as_epq">This exact word or phrase:</label>
+        <input type="text" id="as_epq" name="as_epq" placeholder="e.g. \"neural network\"">
+      </div>
+      <div class="form-group">
+        <label for="as_oq">Any of these words:</label>
+        <input type="text" id="as_oq" name="as_oq" placeholder="e.g. chatbot assistant generative">
+      </div>
+      <div class="form-group">
+        <label for="as_eq">None of these words:</label>
+        <input type="text" id="as_eq" name="as_eq" placeholder="e.g. outdated deprecated">
+      </div>
+      <div class="submit-btn">
+        <input type="submit" value="Advanced Search">
+      </div>
+    </form>
+  </main>
+</body>
+</html>
